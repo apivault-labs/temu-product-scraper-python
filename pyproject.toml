@@ -1,0 +1,58 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "temu-product-scraper"
+version = "0.1.0"
+description = "Python SDK for the Temu Product Scraper Apify actor — 40+ enrichment fields per product: USD-normalized prices (10 currencies), parsed sold count + tier, demand score 0-100, profit margin estimator with arbitrage tier (low/medium/high/unicorn), hot product score, auto-categorization (15 categories), trend detection, risk flags, image gallery, variants, Shopify CSV / Google Merchant export. Outreach links to AliExpress / Amazon / eBay / TikTok. No login. $0.003/product."
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "ApiVault Labs" }]
+keywords = [
+    "temu", "temu-scraper", "temu-api", "temu-product-scraper",
+    "temu-without-login", "temu-without-api-key",
+    "temu-product-data", "temu-prices", "temu-sold-count",
+    "dropshipping", "dropshipping-tools", "dropshipping-research",
+    "dropshipping-finder", "winning-products", "product-research",
+    "shopify-import", "shopify-csv", "shopify-csv-import",
+    "shopify-product-import", "shopify-migration",
+    "google-merchant-feed", "google-shopping-feed",
+    "ecommerce-scraper", "ecommerce-data", "marketplace-scraper",
+    "amazon-arbitrage", "ebay-arbitrage", "retail-arbitrage",
+    "profit-margin-estimator", "competitor-pricing",
+    "price-monitoring", "price-tracker",
+    "niche-scraper-alternative", "sell-the-trend-alternative",
+    "ecomhunt-alternative", "spocket-alternative",
+    "trend-detection", "viral-products", "tiktok-shop-research",
+    "web-scraping", "apify", "apify-actor", "python-sdk",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Information Technology",
+    "Intended Audience :: Other Audience",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Internet :: WWW/HTTP",
+    "Topic :: Office/Business",
+    "Topic :: Office/Business :: Financial",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+requires-python = ">=3.9"
+dependencies = [
+    "requests>=2.31.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/apivault-labs/temu-product-scraper-python"
+Documentation = "https://github.com/apivault-labs/temu-product-scraper-python#readme"
+"Apify Actor" = "https://apify.com/apivault_labs/temu-product-scraper"
+"Bug Tracker" = "https://github.com/apivault-labs/temu-product-scraper-python/issues"
+
+[tool.setuptools.packages.find]
+include = ["temu_scraper*"]
