@@ -3,7 +3,7 @@ TemuScraperClient — synchronous wrapper around the Apify
 ``apivault_labs/temu-product-scraper`` actor (v1.2).
 
 The actor handles all heavy work on Apify infrastructure:
-  - Thunderbit-powered scraping of Temu product pages (no login)
+  - Hosted extraction of Temu product pages without requiring a login
   - 14-layer enrichment: price normalizer (10 currencies + FX),
     sold-count parser, demand score, margin estimator, hot-product
     score, auto-categorization, trend detection, risk flags
@@ -140,7 +140,6 @@ class TemuScraperClient:
         write_summary: bool = True,
         top_products_n: int = 20,
         # Plumbing
-        thunderbit_retries: int = 1,
         max_concurrency: int = 3,
         timeout_per_product: int = 180,
         actor_timeout_secs: int = 1800,
@@ -233,7 +232,6 @@ class TemuScraperClient:
             "exportFormat": export_format,
             "writeSummary": bool(write_summary),
             "topProductsN": max(5, min(100, int(top_products_n))),
-            "thunderbitRetries": max(0, min(3, int(thunderbit_retries))),
             "maxConcurrency": max(1, min(8, int(max_concurrency))),
             "timeout": max(60, min(300, int(timeout_per_product))),
         }
