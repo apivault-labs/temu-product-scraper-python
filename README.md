@@ -343,7 +343,7 @@ pip install git+https://github.com/apivault-labs/temu-product-scraper-python@v0.
 3. Either pass it explicitly or export `APIFY_API_TOKEN`:
 
 ```bash
-export APIFY_API_TOKEN="apify_api_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+export APIFY_API_TOKEN="YOUR_APIFY_TOKEN"
 ```
 
 ```python
@@ -417,7 +417,7 @@ your_code → TemuScraperClient → Apify API
                                     ↓
                             Apify actor v1.2
                                     ↓
-                        Thunderbit (Temu data)
+                        Hosted Actor collection
                                     ↓
               14-layer enrichment (price/sold/demand/margin/...)
                                     ↓
@@ -462,9 +462,8 @@ forcing you into someone else's picks. Plus Shopify CSV and Google
 Merchant exports the others charge extra for.
 
 **Q: Will I get blocked / banned?**
-A: All scraping happens on Apify infrastructure via Thunderbit's
-whitelisted pool. You don't connect to Temu directly — your IP is
-never touched.
+A: The SDK only calls the hosted Apify Actor and reads its Dataset.
+Collection runs remotely, so your local IP is not used by this client.
 
 **Q: Why are some products `success: false`?**
 A: Temu is sensitive to aggressive parallelism. Lower
